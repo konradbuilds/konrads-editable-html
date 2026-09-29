@@ -1,0 +1,32 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Konrad's Editable HTML demo",
+		"author": "konradbuilds",
+		"description": "Custom HTML → Make editable, in one click."
+	},
+	"landingPage": "/wp-admin/post.php?post=1000&action=edit",
+	"login": true,
+	"preferredVersions": {
+		"php": "8.3",
+		"wp": "latest"
+	},
+	"steps": [
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "git:directory",
+				"url": "https://github.com/konradbuilds/konrads-editable-html",
+				"ref": "HEAD",
+				"path": "konrads-editable-html"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php\nrequire_once '/wordpress/wp-load.php';\n// Allow the demo's <style> in the test page.\nkses_remove_filters();\n$content = <<<'HTML'\n<!-- wp:paragraph -->\n<p>Try it: click the dark section below, then <strong>Make editable</strong> in its toolbar. Then click the heading and type.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:html -->\n<style>\n  .hero { padding: 4rem 2rem; background: #111827; color: #f9fafb; font-family: system-ui, sans-serif; }\n  .hero h1 { color: crimson; font-size: 2.4rem; line-height: 1.1; margin: 0 0 .75rem; }\n  .hero .lead { font-size: 1.2rem; opacity: .85; margin: 0 0 1.5rem; }\n  .hero .btn { display: inline-block; padding: .7rem 1.2rem; background: #f9fafb; color: #111827; border-radius: 6px; text-decoration: none; }\n</style>\n<section class=\"hero\">\n  <h1>15+ years shipping products from idea to launch.</h1>\n  <p class=\"lead\">WordPress custom builds &amp; digital products.</p>\n  <a class=\"btn\" href=\"#contact\">Get in touch</a>\n</section>\n<!-- /wp:html -->\nHTML;\nwp_insert_post(\n\tarray(\n\t\t'import_id'    => 1000,\n\t\t'post_type'    => 'page',\n\t\t'post_status'  => 'publish',\n\t\t'post_title'   => 'Konrad\\'s Editable HTML demo',\n\t\t'post_content' => $content,\n\t)\n);\n"
+		}
+	]
+}

@@ -1,0 +1,120 @@
+/**
+ * Editable HTML block: editor-only styles.
+ * Shows which parts can be edited. Nothing here loads on the front end.
+ */
+
+.konrads-editable-html-edit [data-keh-field] {
+	outline: 1px dashed transparent;
+	outline-offset: 2px;
+	transition: outline-color 0.1s ease;
+}
+
+.konrads-editable-html-edit.is-selected [data-keh-field],
+.konrads-editable-html-edit [data-keh-field]:hover {
+	outline-color: var(--wp-admin-theme-color, #3858e9);
+}
+
+.konrads-editable-html-edit img[data-keh-field] {
+	cursor: pointer;
+}
+
+.konrads-editable-html-edit .block-editor-plain-text {
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 12em;
+	padding: 12px;
+	border: 1px solid #949494;
+	border-radius: 2px;
+	font-family: Menlo, Consolas, monaco, monospace;
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+.konrads-editable-html-start {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 12px;
+	width: 100%;
+}
+
+.konrads-editable-html-start__row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+}
+
+.konrads-editable-html-start__label {
+	font-weight: 500;
+}
+
+.konrads-editable-html-start .components-base-control,
+.konrads-editable-html-start textarea {
+	width: 100%;
+}
+
+.konrads-editable-html-start textarea {
+	font-family: Menlo, Consolas, monaco, monospace;
+}
+
+.konrads-editable-html-start .components-notice {
+	width: 100%;
+	margin: 0;
+}
+
+.konrads-editable-html-icon {
+	display: contents;
+}
+
+.konrads-editable-html-list-items {
+	margin: 0 0 12px;
+	padding: 0;
+	list-style: none;
+}
+
+.konrads-editable-html-list-items li {
+	display: flex;
+	align-items: center;
+	gap: 2px;
+	margin: 0;
+	padding: 4px 0;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.konrads-editable-html-list-items__name {
+	flex: 1;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.konrads-editable-html-notice {
+	padding: 16px 16px 0;
+}
+
+.konrads-editable-html-image-settings {
+	display: grid;
+	gap: 8px;
+	margin-bottom: 16px;
+}
+
+.konrads-editable-html-image-settings img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border-radius: 2px;
+}
+
+.konrads-editable-html-help {
+	margin-top: 0;
+	color: #757575;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.konrads-editable-html-edit [data-keh-field] {
+		transition: none;
+	}
+}

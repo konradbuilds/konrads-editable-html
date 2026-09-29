@@ -1,0 +1,43 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "konrads-editable-html/editable-html",
+	"version": "0.1.0",
+	"title": "Editable HTML",
+	"category": "design",
+	"icon": "editor-code",
+	"description": "Your own HTML section. Text, links, images and lists stay editable. Everything else stays exactly as you wrote it.",
+	"keywords": [ "html", "code", "section", "custom", "paste" ],
+	"textdomain": "konrads-editable-html",
+	"attributes": {
+		"content": {
+			"type": "string",
+			"source": "raw",
+			"role": "content"
+		},
+		"fields": {
+			"type": "array",
+			"default": []
+		},
+		"htmlLocked": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"example": {
+		"attributes": {
+			"content": "<section style=\"padding:2rem;background:#111827;color:#f9fafb;font-family:system-ui,sans-serif\"><h2 style=\"margin:0 0 .5rem\">Your own design</h2><p style=\"margin:0\">Click the text to change it.</p></section>",
+			"fields": [
+				{ "path": "0/0", "kind": "text", "label": "Heading" },
+				{ "path": "0/1", "kind": "text", "label": "Text" }
+			]
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css"
+}
