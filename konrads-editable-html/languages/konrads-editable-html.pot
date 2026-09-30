@@ -1,0 +1,425 @@
+# Copyright (C) 2026 Konrad Sroka
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Konrad's Editable HTML 0.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/konrads-editable-html\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-30 20:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Domain: konrads-editable-html\n"
+
+#. translators: 1: number of parts, 2: list of reasons, e.g. "link, image".
+#: konrads-editable-html/blocks/editable-html/index.js:1059
+msgid "%1$d part stays fixed (%2$s)."
+msgid_plural "%1$d parts stay fixed (%2$s)."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: item number, 2: start of the item's text.
+#: konrads-editable-html/blocks/editable-html/index.js:643
+msgid "%1$d. %2$s"
+msgstr ""
+
+#. translators: %d: number of files.
+#: konrads-editable-html/assets/js/importer.js:253
+msgid "%d file from another server (CDN) was removed. Load libraries from your own site instead: safer, faster, and no visitor data goes to third parties (GDPR)."
+msgid_plural "%d files from other servers (CDNs) were removed. Load libraries from your own site instead: safer, faster, and no visitor data goes to third parties (GDPR)."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of files.
+#: konrads-editable-html/assets/js/importer.js:152
+msgid "%d file in the zip was larger than 1 MB and was skipped."
+msgid_plural "%d files in the zip were larger than 1 MB and were skipped."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of images.
+#: konrads-editable-html/blocks/editable-html/index.js:962
+msgid "%d image has no alt text."
+msgid_plural "%d images have no alt text."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of files.
+#: konrads-editable-html/assets/js/importer.js:162
+msgid "%d other file in the zip was not imported (images, fonts, other types). Upload images to the Media Library and replace them in the block."
+msgid_plural "%d other files in the zip were not imported (images, fonts, other types). Upload images to the Media Library and replace them in the block."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of editable parts.
+#: konrads-editable-html/blocks/editable-html/index.js:1114
+msgid "%d part is now editable in the Editable HTML block."
+msgid_plural "%d parts are now editable in the Editable HTML block."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of editable parts.
+#: konrads-editable-html/blocks/editable-html/index.js:1193
+msgid "%d part is now editable."
+msgid_plural "%d parts are now editable."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: name of the image, e.g. "Image".
+#: konrads-editable-html/blocks/editable-html/index.js:601
+msgid "%s alt text"
+msgstr ""
+
+#. translators: %s: file name.
+#: konrads-editable-html/assets/js/importer.js:300
+msgid "%s could not be read."
+msgstr ""
+
+#. translators: %s: file name.
+#: konrads-editable-html/assets/js/importer.js:295
+msgid "%s has too many files."
+msgstr ""
+
+#. translators: %s: file name.
+#: konrads-editable-html/assets/js/importer.js:293
+msgid "%s is not a readable .zip file."
+msgstr ""
+
+#. translators: %s: file name.
+#: konrads-editable-html/assets/js/importer.js:297
+msgid "%s is too big (more than 3 MB of text)."
+msgstr ""
+
+#. translators: %s: HTML list tag, e.g. "UL".
+#: konrads-editable-html/blocks/editable-html/index.js:60
+msgid "%s list"
+msgstr ""
+
+#. translators: %s: file name.
+#: konrads-editable-html/assets/js/importer.js:312
+msgid "%s was skipped. Pick .html, .css, .js or .zip files."
+msgstr ""
+
+#. translators: %s: name of the link, e.g. "Button".
+#: konrads-editable-html/blocks/editable-html/index.js:946
+msgid "%s: web address"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:667
+msgid "Add item"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:55
+msgid "Button"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:440
+msgid "Calculator (JavaScript)"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:408
+msgid "Cards"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:275
+msgid "Click to replace the image"
+msgstr ""
+
+#: konrads-editable-html/assets/js/template-snippet.js:206
+msgid "Copy code"
+msgstr ""
+
+#: konrads-editable-html/assets/js/template-snippet.js:200
+msgid "Copying failed. Select the code above and copy it by hand."
+msgstr ""
+
+#. translators: %s: name of the image, e.g. "Image".
+#: konrads-editable-html/blocks/editable-html/index.js:602
+msgid "Describe the image for people who cannot see it. Leave empty only if it is decoration."
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:869
+msgid "Done"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:893
+msgid "Done setting up? Lock the HTML before you hand the site over."
+msgstr ""
+
+#. translators: %s: item name.
+#: konrads-editable-html/blocks/editable-html/index.js:653
+msgid "Duplicate: %s"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:869
+msgid "Edit HTML"
+msgstr ""
+
+#. block title/description
+#: konrads-editable-html/blocks/editable-html/index.js:805 konrads-editable-html/blocks/editable-html/block.json:1
+msgid "Editable HTML"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:911
+msgid "Editable parts"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:850 konrads-editable-html/blocks/editable-html/index.js:887
+msgid "HTML"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:56
+msgid "Heading"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:392
+msgid "Hero"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:57 konrads-editable-html/blocks/editable-html/index.js:680
+msgid "Image"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:956
+msgid "Images"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:531
+msgid "Import files…"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:539
+msgid "Import: pick your .html, .css and .js files together, or one .zip (a CodePen export works)."
+msgstr ""
+
+#. translators: 1: item number, 2: start of the item's text.
+#: konrads-editable-html/blocks/editable-html/index.js:643
+msgid "Item"
+msgstr ""
+
+#: konrads-editable-html/assets/js/template-snippet.js:211
+msgid "Keep CSS and JavaScript in your theme, not in the pattern."
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:58 konrads-editable-html/blocks/editable-html/index.js:683
+msgid "Link"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:937
+msgid "Links"
+msgstr ""
+
+#. translators: %s: HTML list tag, e.g. "UL".
+#: konrads-editable-html/blocks/editable-html/index.js:61
+msgid "List item"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:425
+msgid "List with icons"
+msgstr ""
+
+#. translators: %s: name of the list, e.g. "Cards".
+#: konrads-editable-html/blocks/editable-html/index.js:637
+msgid "List: %s"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:906
+msgid "Lock HTML"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:1135 konrads-editable-html/blocks/editable-html/index.js:1162 konrads-editable-html/blocks/editable-html/index.js:1183 konrads-editable-html/blocks/editable-html/index.js:1201
+msgid "Make all editable"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:561 konrads-editable-html/blocks/editable-html/index.js:1213
+msgid "Make editable"
+msgstr ""
+
+#. translators: %s: item name.
+#: konrads-editable-html/blocks/editable-html/index.js:651
+msgid "Move down: %s"
+msgstr ""
+
+#. translators: %s: item name.
+#: konrads-editable-html/blocks/editable-html/index.js:649
+msgid "Move up: %s"
+msgstr ""
+
+#: konrads-editable-html/assets/js/importer.js:319
+msgid "No HTML, CSS or JS found."
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:1171
+msgid "No headings or paragraphs that core can make editable. The Editable HTML block can handle links, images and lists."
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:1172
+msgid "Nothing editable found in this HTML."
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:917
+msgid "Nothing editable found. Add headings, paragraphs, links or images to the HTML."
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:808
+msgid "Only people who can add custom HTML (usually administrators) can set up this block."
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:546
+msgid "Or paste HTML"
+msgstr ""
+
+#: konrads-editable-html/assets/js/template-snippet.js:175
+msgid "Paste this into your theme template where the old markup was. Clients then edit this pattern instead of your PHP."
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:547
+msgid "Paste your HTML here, <style> and <script> included."
+msgstr ""
+
+#. translators: %s: item name.
+#: konrads-editable-html/blocks/editable-html/index.js:655
+msgid "Remove: %s"
+msgstr ""
+
+#. translators: %s: name of the image, e.g. "Image".
+#: konrads-editable-html/blocks/editable-html/index.js:593
+msgid "Replace %s"
+msgstr ""
+
+#: konrads-editable-html/assets/js/template-snippet.js:162
+msgid "Save this pattern first. Its template code then appears here."
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:507
+msgid "Start with"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:508
+msgid "Start with:"
+msgstr ""
+
+#: konrads-editable-html/assets/js/template-snippet.js:179
+msgid "Template code"
+msgstr ""
+
+#: konrads-editable-html/assets/js/template-snippet.js:193
+msgid "Template code copied."
+msgstr ""
+
+#. translators: %s: HTML list tag, e.g. "UL".
+#: konrads-editable-html/blocks/editable-html/index.js:62 konrads-editable-html/blocks/editable-html/index.js:685
+msgid "Text"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:892
+msgid "The HTML is locked, so nobody changes the design by accident. Text, links, images and lists can still be edited."
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:1182
+msgid "This HTML could not be converted safely, so nothing was changed."
+msgstr ""
+
+#: konrads-editable-html/assets/js/template-snippet.js:217
+msgid "This pattern is not synced. The template always shows this pattern as edited here, but a copy placed in a post is separate - edits made there never reach the template."
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:916
+msgid "Ticked parts can be changed by anyone who can edit this page."
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:1152
+msgid "Tip: on WordPress 7.1 or newer, \"Make editable\" uses WordPress\\'s own editing. No plugin is needed afterwards."
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:298
+msgid "Type here…"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:906
+msgid "Unlock HTML"
+msgstr ""
+
+#: konrads-editable-html/assets/js/template-snippet.js:153
+msgid "Use in a template"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:849
+msgid "Write HTML…"
+msgstr ""
+
+#. block title/description
+#: konrads-editable-html/blocks/editable-html/block.json:1
+msgid "Your own HTML section. Text, links, images and lists stay editable. Everything else stays exactly as you wrote it."
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:807
+msgid "Your own HTML with editable text, links, images and lists. Everything else stays exactly as you wrote it."
+msgstr ""
+
+#: konrads-editable-html/assets/js/template-snippet.js:223
+msgid "Your theme\\'s styles are not loaded here, so the pattern looks plainer than on the front end. Add add_editor_style( \\'style.css\\' ); to your theme\\'s functions.php to fix that."
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:882
+msgid "Your user role cannot save custom HTML. Saving this page may remove styles or scripts from this block. Change text only if an administrator has confirmed it is safe."
+msgstr ""
+
+#. block keyword
+#: konrads-editable-html/blocks/editable-html/block.json:1
+msgid "code"
+msgstr ""
+
+#. block keyword
+#: konrads-editable-html/blocks/editable-html/block.json:1
+msgid "custom"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:1048
+msgid "extra attributes"
+msgstr ""
+
+#. block keyword
+#: konrads-editable-html/blocks/editable-html/block.json:1
+msgid "html"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:1043
+msgid "image"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:1047
+msgid "inline style"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:1042
+msgid "link"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:1045
+msgid "list item"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:1046
+msgid "other element"
+msgstr ""
+
+#. block keyword
+#: konrads-editable-html/blocks/editable-html/block.json:1
+msgid "paste"
+msgstr ""
+
+#. block keyword
+#: konrads-editable-html/blocks/editable-html/block.json:1
+msgid "section"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:1049
+msgid "special formatting"
+msgstr ""
+
+#: konrads-editable-html/blocks/editable-html/index.js:1044
+msgid "text with icon"
+msgstr ""

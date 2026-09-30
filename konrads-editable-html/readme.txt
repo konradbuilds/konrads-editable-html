@@ -1,22 +1,22 @@
 === Konrad's Editable HTML ===
 Contributors:      konradS
-Tags:              html, custom html, editable, blocks, no build
+Tags:              custom html, editable, blocks, patterns, templates
 Requires at least: 6.6
 Tested up to:      7.1
 Requires PHP:      7.4
-Stable tag:        0.1.0
+Stable tag:        0.2.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-Make your custom HTML client-editable in one click. Your layout stays exactly as built. No React, no npm, no build step.
+HTML or page template section to editable block in 1 click. Paste one line back and clients can edit the text. No React, no npm, no build.
 
 == Description ==
 
-**Your custom HTML, client-editable in one click.**
+**Your custom HTML and page template parts, client-editable in one click.**
 
-You know the headache. A custom section lives in a template or a Custom HTML block, and every small text change means a message to you. Rebuilding it as a real block means React, npm and a build step.
+Your templates are full of sections clients can't touch. The hero, the intro block, the call to action - all sitting in PHP, so every small text change means a message to you. Move them out, one at a time.
 
-Konrad's Editable HTML skips all of that. Paste your HTML, click once. Your layout stays exactly as you built it. Clients change only the parts you chose. Fewer small change requests for you, happier clients.
+Paste the markup into a Custom HTML block, click once, and the text is editable. Your layout stays exactly as you built it. Clients change only the parts you chose.
 
 1. Add a Custom HTML block and paste your section, `<style>` included.
 2. Click **Make editable** in the block toolbar.
@@ -35,6 +35,19 @@ Built on core blocks. Deactivate the plugin – your content stays. On 7.1+, it 
 * **Lock HTML.** Freeze the setup before hand-over.
 * **No lock-in.** Deactivate the plugin – your pages look the same.
 * **No React, no npm, no build step.** Plain PHP and JavaScript you can read.
+
+= Get sections out of your page templates =
+
+The part that really costs you time sits in `header.php` or a page template, not in a page. The way out:
+
+1. **Patterns** in wp-admin: create a pattern and paste your section into a Custom HTML block.
+2. Click **Make editable** and tick what clients may change.
+3. Open **Use in a template** in the sidebar and click **Copy code**.
+4. Paste that code into your template, in place of the old markup.
+
+Done. The section looks exactly the same, and clients edit it under Patterns instead of messaging you.
+
+The code it gives you is core WordPress - `get_page_by_path()` and `do_blocks()`, nothing of this plugin. It finds the pattern by slug, not by ID, so it survives a move from staging to live. Deactivate the plugin and the template keeps working.
 
 = Who it's for =
 
@@ -116,7 +129,24 @@ It stays in your HTML, exactly as written. Selectors without a class (for exampl
 
 Your pages look exactly the same. On WordPress 7.1+, headings and paragraphs made editable with core slots stay editable. Editable HTML blocks keep their HTML; WordPress offers to keep them as Custom HTML.
 
+= Can I use this in a theme template, not just on a page? =
+
+Yes. Build the section as a pattern, then copy the template code from the **Use in a template** panel and paste it into your template file. The code uses core functions only.
+
+= Does the pattern have to be synced? =
+
+No. A template always shows the pattern as you edit it under Patterns, synced or not. The difference only shows up inside posts: a copy of an unsynced pattern placed in a post is separate, so edits made there never reach the template. The panel says so when a pattern is unsynced.
+
+= The pattern looks plain in the editor =
+
+Your theme's CSS is not loaded there. Classic themes need `add_editor_style( 'style.css' );` in `functions.php`. Block themes load their styles already.
+
 == Changelog ==
+
+= 0.2.0 =
+* New: **Use in a template** panel in the pattern editor. Copy one line of core PHP and render the pattern from a theme template.
+* New: a note when the pattern is not synced, so nobody expects edits made inside a post to reach the template.
+* New: a hint when the theme loads no editor styles.
 
 = 0.1.0 =
 * First public release.
@@ -124,3 +154,5 @@ Your pages look exactly the same. On WordPress 7.1+, headings and paragraphs mad
 * "Make all editable": the Editable HTML block for links, images and lists.
 * Older WordPress (6.6+): the Editable HTML block right away.
 * Examples, file and .zip import, Lock HTML, alt text check.
+
+===== FILE: konrads-editable-html/blocks/editable-html/block.json =====

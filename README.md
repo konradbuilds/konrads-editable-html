@@ -1,7 +1,7 @@
 # Konrad's Editable HTML
 
-**Your custom HTML, client-editable in one click.**
-You pick what clients can change – your layout stays exactly as built. No React, no build step.
+**HTML or page template section to editable block in 1 click.**
+Paste one line back and clients can edit the text. Your layout stays exactly as built. No React, no npm, no build.
 
 [**▶ Try it live in your browser**](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/konradbuilds/konrads-editable-html/main/blueprint.json) — opens WordPress with the plugin and a demo page. Nothing to install.
 
@@ -12,6 +12,31 @@ You pick what clients can change – your layout stays exactly as built. No Reac
 3. Done. Headings and paragraphs are editable right on the page. Everything else stays exactly as you wrote it.
 
 Built on core blocks. Deactivate the plugin – your content stays. On 7.1+, it even stays editable.
+
+## Get sections out of your page templates
+
+Your templates are full of sections clients can't touch. The hero, the intro, the call to action – all sitting in PHP. Move them out, one at a time:
+
+1. **Patterns** in wp-admin → new pattern → Custom HTML block → paste your section.
+2. **Make editable**, tick what clients may change.
+3. Sidebar → **Use in a template** → **Copy code**.
+4. Paste it into your template in place of the old markup.
+
+You get core WordPress, nothing of this plugin:
+
+```php
+<?php
+// Pattern: hero-home (edit it under Patterns in wp-admin).
+$keh_pattern = get_page_by_path( 'hero-home', OBJECT, 'wp_block' );
+if ( $keh_pattern instanceof WP_Post && 'publish' === $keh_pattern->post_status ) {
+	echo do_blocks( '<!-- wp:block {"ref":' . (int) $keh_pattern->ID . '} /-->' );
+} elseif ( current_user_can( 'edit_theme_options' ) ) {
+	echo '<!-- Pattern "hero-home" not found. -->';
+}
+?>
+```
+
+By slug, not by ID – it survives the move from staging to live.
 
 ## Native first
 
@@ -29,8 +54,8 @@ Designers and front-end developers write HTML and CSS. Clients want to change th
 
 ## Install
 
-- **wordpress.org:** coming soon (in review).
-- **Now:** download the latest `konrads-editable-html` zip from [Releases](../../releases) → WordPress → Plugins → Add New → Upload.
+- **wordpress.org:** [Konrad's Editable HTML](https://wordpress.org/plugins/konrads-editable-html).
+- **Or:** download the latest `konrads-editable-html` zip from [Releases](../../releases) → WordPress → Plugins → Add New → Upload.
 
 ## Repository
 
@@ -53,3 +78,4 @@ Built by [Konrad Sroka](https://konradbuilds.github.io) and Claude AI.
 ## License
 
 GPL-2.0-or-later.
+

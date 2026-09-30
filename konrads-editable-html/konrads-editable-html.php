@@ -2,8 +2,8 @@
 /**
  * Plugin Name:       Konrad's Editable HTML
  * Plugin URI:        https://github.com/konradbuilds/konrads-editable-html
- * Description:       Make your custom HTML client-editable in one click. Your layout stays exactly as built. No React, no npm, no build step.
- * Version:           0.1.0
+ * Description:       HTML or page template section to editable block in 1 click. Paste one line back and clients can edit the text. No React, no npm, no build.
+ * Version:           0.2.0
  * Requires at least: 6.6
  * Requires PHP:      7.4
  * Author:            Konrad Sroka
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'KONRADS_EDITABLE_HTML_VERSION', '0.1.0' );
+define( 'KONRADS_EDITABLE_HTML_VERSION', '0.2.0' );
 
 /**
  * Registers the shared scripts and the Editable HTML block.
@@ -60,7 +60,76 @@ function konrads_editable_html_init() {
 
 	register_block_type( __DIR__ . '/blocks/editable-html' );
 
+	konrads_editable_html_register_template_snippet();
+
 	wp_set_script_translations( 'konrads-editable-html-importer', 'konrads-editable-html' );
+	wp_set_script_translations( 'konrads-editable-html-template-snippet', 'konrads-editable-html' );
 	wp_set_script_translations( 'konrads-editable-html-editable-html-editor-script', 'konrads-editable-html' );
 }
 add_action( 'init', 'konrads_editable_html_init' );
+
+/**
+ * Registers the "Use in a template" panel shown in the pattern editor.
+ *
+ * @since 0.2.0
+ */
+function konrads_editable_html_register_template_snippet() {
+	wp_register_script(
+		'konrads-editable-html-template-snippet',
+		plugins_url( 'assets/js/template-snippet.js', __FILE__ ),
+		array(
+			'wp-components',
+			'wp-data',
+			'wp-editor',
+			'wp-element',
+			'wp-i18n',
+			'wp-notices',
+			'wp-plugins',
+		),
+		KONRADS_EDITABLE_HTML_VERSION,
+		array( 'in_footer' => true )
+	);
+
+	wp_register_style(
+		'konrads-editable-html-template-snippet',
+		plugins_url( 'assets/css/template-snippet.css', __FILE__ ),
+		array(),
+		KONRADS_EDITABLE_HTML_VERSION
+	);
+
+	/*
+	 * Block themes always style the editor. Classic themes only do when they
+	 * call add_editor_style(). Without it the pattern looks plainer here than
+	 * on the front end, so the panel says so.
+	 */
+	wp_add_inline_script(
+		'konrads-editable-html-template-snippet',
+		'window.konradsEditableHtmlTemplate = ' . wp_json_encode(
+			array(
+				'hasEditorStyles' => wp_is_block_theme() || current_theme_supports( 'editor-styles' ),
+			)
+		) . ';',
+		'before'
+	);
+}
+
+/**
+ * Loads the panel on the pattern editor screen only.
+ *
+ * @since 0.2.0
+ */
+function konrads_editable_html_enqueue_template_snippet() {
+	if ( ! function_exists( 'get_current_screen' ) ) {
+		return;
+	}
+
+	$screen = get_current_screen();
+
+	if ( ! $screen || 'wp_block' !== $screen->post_type ) {
+		return;
+	}
+
+	wp_enqueue_script( 'konrads-editable-html-template-snippet' );
+	wp_enqueue_style( 'konrads-editable-html-template-snippet' );
+}
+add_action( 'enqueue_block_editor_assets', 'konrads_editable_html_enqueue_template_snippet' );

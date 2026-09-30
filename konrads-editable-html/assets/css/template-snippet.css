@@ -1,0 +1,24 @@
+/**
+ * Styles for the "Use in a template" panel.
+ *
+ * @since 0.2.0
+ *
+ * @package KonradsEditableHtml
+ */
+
+.konrads-editable-html-snippet textarea {
+	font-family: Menlo, Consolas, monaco, monospace;
+	font-size: 12px;
+	line-height: 1.5;
+	white-space: pre;
+}
+
+.konrads-editable-html-snippet__help {
+	margin: 0 0 8px;
+	color: #757575;
+	font-size: 12px;
+}
+
+.konrads-editable-html-snippet .components-base-control {
+	margin-bottom: 8px;
+}
