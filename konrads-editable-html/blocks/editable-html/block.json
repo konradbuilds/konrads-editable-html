@@ -2,7 +2,7 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "konrads-editable-html/editable-html",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"title": "Editable HTML",
 	"category": "design",
 	"icon": "editor-code",

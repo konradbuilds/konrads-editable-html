@@ -4,7 +4,7 @@ Tags:              custom html, editable, blocks, patterns, templates
 Requires at least: 6.6
 Tested up to:      7.1
 Requires PHP:      7.4
-Stable tag:        0.2.0
+Stable tag:        0.3.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,38 +16,57 @@ HTML or page template section to editable block in 1 click. Paste one line back 
 
 Your templates are full of sections clients can't touch. The hero, the intro block, the call to action - all sitting in PHP, so every small text change means a message to you. Move them out, one at a time.
 
-Paste the markup into a Custom HTML block, click once, and the text is editable. Your layout stays exactly as you built it. Clients change only the parts you chose.
+Your layout stays exactly as you built it. Clients change only the parts you chose.
+
+Built on core blocks. Deactivate the plugin - your content stays. On 7.1+, it even stays editable.
+
+= Two ways to use it =
+
+**1. A section on a page**
 
 1. Add a Custom HTML block and paste your section, `<style>` included.
 2. Click **Make editable** in the block toolbar.
-3. Done. Headings and paragraphs can now be edited right on the page. Everything else stays as you wrote it.
+3. Tick the parts clients may change.
+4. Click **Lock HTML** before you hand the site over.
 
-Built on core blocks. Deactivate the plugin – your content stays. On 7.1+, it even stays editable.
+Clients click the text and type. Nothing else moves.
+
+**2. A section stuck in a PHP template**
+
+For classic and hybrid themes, where templates are PHP files.
+
+1. Go to **Appearance &rarr; Patterns** and add a new one.
+   Can't see Patterns in your backend? Scroll down for tips.
+2. Add a Custom HTML block and paste the markup from your template.
+3. Click **Make editable**, tick the parts, lock the HTML.
+4. Save. Then open **Use in a template** in the sidebar and click **Copy code**.
+5. Paste that code into your template, in place of the old markup.
+
+The section looks exactly the same, and clients edit it under Patterns instead of messaging you.
+
+The code you get is core WordPress - `get_page_by_path()` and `do_blocks()`, nothing of this plugin. It finds the pattern by slug, not by ID, so it survives a move from staging to live. Deactivate the plugin and the template keeps working.
+
+= Can't find the Patterns screen? =
+
+* It lives at `/wp-admin/edit.php?post_type=wp_block`. That is the screen this plugin works on.
+* On a block theme, **Appearance &rarr; Patterns** opens the site editor instead. Use the address above.
+* The menu needs the `edit_theme_options` capability. Editors and authors don't have it.
+* Or start in the post editor: select your blocks, open the options menu, choose **Create pattern**.
+
+The plugin's **How to use** page links straight there. Find it next to Activate and Deactivate on your Plugins screen.
 
 = What you get =
 
 * **One click.** Select your Custom HTML block, click **Make editable**.
 * **Your layout, untouched.** The markup and CSS stay exactly as you wrote them.
-* **You pick what's editable.** Headings, paragraphs, links, images, lists – tick what clients may change.
+* **You pick what's editable.** Headings, paragraphs, links, images, lists - tick what clients may change.
+* **Use it in a PHP template.** One line of core PHP, copied for you.
 * **Core blocks on WordPress 7.1+.** Plain WordPress, no plugin needed to keep editing.
-* **A fallback block on 6.6–7.0.** Same result on older sites.
+* **A fallback block on 6.6-7.0.** Same result on older sites.
 * **Examples and import.** Start from a hero, cards, list or calculator, or import .html/.css/.js or a .zip.
 * **Lock HTML.** Freeze the setup before hand-over.
-* **No lock-in.** Deactivate the plugin – your pages look the same.
+* **No lock-in.** Deactivate the plugin - your pages look the same.
 * **No React, no npm, no build step.** Plain PHP and JavaScript you can read.
-
-= Get sections out of your page templates =
-
-The part that really costs you time sits in `header.php` or a page template, not in a page. The way out:
-
-1. **Patterns** in wp-admin: create a pattern and paste your section into a Custom HTML block.
-2. Click **Make editable** and tick what clients may change.
-3. Open **Use in a template** in the sidebar and click **Copy code**.
-4. Paste that code into your template, in place of the old markup.
-
-Done. The section looks exactly the same, and clients edit it under Patterns instead of messaging you.
-
-The code it gives you is core WordPress - `get_page_by_path()` and `do_blocks()`, nothing of this plugin. It finds the pattern by slug, not by ID, so it survives a move from staging to live. Deactivate the plugin and the template keeps working.
 
 = Who it's for =
 
@@ -143,6 +162,12 @@ Your theme's CSS is not loaded there. Classic themes need `add_editor_style( 'st
 
 == Changelog ==
 
+= 0.3.0 =
+* New: a "How to use" page with both workflows side by side, linked from the plugin row on the Plugins screen.
+* New: a one-time notice after activation, with a link to that page.
+* The page links straight to the pattern screen, including on block themes where the menu opens the site editor instead.
+* Readme rewritten around the two ways to use the plugin.
+
 = 0.2.0 =
 * New: **Use in a template** panel in the pattern editor. Copy one line of core PHP and render the pattern from a theme template.
 * New: a note when the pattern is not synced, so nobody expects edits made inside a post to reach the template.
@@ -154,5 +179,3 @@ Your theme's CSS is not loaded there. Classic themes need `add_editor_style( 'st
 * "Make all editable": the Editable HTML block for links, images and lists.
 * Older WordPress (6.6+): the Editable HTML block right away.
 * Examples, file and .zip import, Lock HTML, alt text check.
-
-===== FILE: konrads-editable-html/blocks/editable-html/block.json =====

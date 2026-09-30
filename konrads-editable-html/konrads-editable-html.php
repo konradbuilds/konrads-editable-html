@@ -3,7 +3,7 @@
  * Plugin Name:       Konrad's Editable HTML
  * Plugin URI:        https://github.com/konradbuilds/konrads-editable-html
  * Description:       HTML or page template section to editable block in 1 click. Paste one line back and clients can edit the text. No React, no npm, no build.
- * Version:           0.2.0
+ * Version:           0.3.0
  * Requires at least: 6.6
  * Requires PHP:      7.4
  * Author:            Konrad Sroka
@@ -19,7 +19,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'KONRADS_EDITABLE_HTML_VERSION', '0.2.0' );
+define( 'KONRADS_EDITABLE_HTML_VERSION', '0.3.0' );
+
+if ( is_admin() ) {
+	require_once __DIR__ . '/admin/help.php';
+
+	add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'konrads_editable_html_plugin_row_link' );
+}
+
+/**
+ * Remembers that the plugin was just activated, so the welcome notice shows once.
+ *
+ * @since 0.3.0
+ */
+function konrads_editable_html_activate() {
+	add_option( 'konrads_editable_html_welcome', '1' );
+}
+register_activation_hook( __FILE__, 'konrads_editable_html_activate' );
 
 /**
  * Registers the shared scripts and the Editable HTML block.
