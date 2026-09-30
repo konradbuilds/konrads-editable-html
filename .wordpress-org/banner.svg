@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1544" height="500" viewBox="0 0 1544 500">
+  <rect width="1544" height="500" fill="#2e1b42"/>
+  <g font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="96" y="132" font-size="50" font-weight="600" fill="#ffffff" letter-spacing="-1.5">Konrad's Editable HTML</text>
+  </g>
+  <g font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" transform="translate(96 186)">
+    <rect x="0" y="0" width="350" height="124" rx="12" fill="#ffffff"/>
+    <text x="175" y="62" font-size="40" font-weight="700" fill="#3a2352" text-anchor="middle">Page template</text>
+    <text x="175" y="98" font-size="22" fill="#6b5f79" text-anchor="middle">clients can't touch it</text>
+    <path d="M374 62 h58 m0 0 l-18 -14 m18 14 l-18 14" stroke="#f6c667" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="460" y="0" width="350" height="124" rx="12" fill="#f6c667"/>
+    <text x="635" y="62" font-size="40" font-weight="700" fill="#3a2352" text-anchor="middle">Editable block</text>
+    <text x="635" y="98" font-size="22" fill="#5e4a2a" text-anchor="middle">in 1 click</text>
+    <text x="0" y="192" font-size="32" font-weight="700" fill="#ffffff">Paste one line back. Clients edit the text.</text>
+    <text x="0" y="236" font-size="26" fill="#c9bcd8">No React, no npm, no build step.</text>
+  </g>
+  <g transform="translate(980 130)">
+    <rect width="420" height="240" rx="14" fill="#ffffff"/>
+    <rect x="34" y="46" width="352" height="92" rx="8" fill="#ffffff" stroke="#7a5aa8" stroke-width="5" stroke-dasharray="16 10"/>
+    <rect x="62" y="78" width="236" height="30" rx="5" fill="#2e1b42"/>
+    <rect x="314" y="68" width="7" height="50" rx="3.5" fill="#d9901f"/>
+    <rect x="34" y="172" width="280" height="14" rx="7" fill="#ddd6e6"/>
+    <rect x="34" y="202" width="198" height="14" rx="7" fill="#ddd6e6"/>
+  </g>
+</svg>
