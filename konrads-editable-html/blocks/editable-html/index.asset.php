@@ -21,5 +21,5 @@ return array(
 		'wp-i18n',
 		'wp-notices',
 	),
-	'version'      => '0.3.0',
+	'version'      => '0.4.0',
 );

@@ -3,7 +3,7 @@
  * Plugin Name:       Konrad's Editable HTML
  * Plugin URI:        https://github.com/konradbuilds/konrads-editable-html
  * Description:       HTML or page template section to editable block in 1 click. Paste one line back and clients can edit the text. No React, no npm, no build.
- * Version:           0.3.0
+ * Version:           0.4.0
  * Requires at least: 6.6
  * Requires PHP:      7.4
  * Author:            Konrad Sroka
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'KONRADS_EDITABLE_HTML_VERSION', '0.3.0' );
+define( 'KONRADS_EDITABLE_HTML_VERSION', '0.4.0' );
 
 if ( is_admin() ) {
 	require_once __DIR__ . '/admin/help.php';
@@ -80,6 +80,7 @@ function konrads_editable_html_init() {
 
 	wp_set_script_translations( 'konrads-editable-html-importer', 'konrads-editable-html' );
 	wp_set_script_translations( 'konrads-editable-html-template-snippet', 'konrads-editable-html' );
+	wp_set_script_translations( 'konrads-editable-html-pattern-panel', 'konrads-editable-html' );
 	wp_set_script_translations( 'konrads-editable-html-editable-html-editor-script', 'konrads-editable-html' );
 }
 add_action( 'init', 'konrads_editable_html_init' );
@@ -91,9 +92,18 @@ add_action( 'init', 'konrads_editable_html_init' );
  */
 function konrads_editable_html_register_template_snippet() {
 	wp_register_script(
+		'konrads-editable-html-snippet',
+		plugins_url( 'assets/js/snippet.js', __FILE__ ),
+		array(),
+		KONRADS_EDITABLE_HTML_VERSION,
+		array( 'in_footer' => true )
+	);
+
+	wp_register_script(
 		'konrads-editable-html-template-snippet',
 		plugins_url( 'assets/js/template-snippet.js', __FILE__ ),
 		array(
+			'konrads-editable-html-snippet',
 			'wp-components',
 			'wp-data',
 			'wp-editor',
@@ -101,6 +111,24 @@ function konrads_editable_html_register_template_snippet() {
 			'wp-i18n',
 			'wp-notices',
 			'wp-plugins',
+		),
+		KONRADS_EDITABLE_HTML_VERSION,
+		array( 'in_footer' => true )
+	);
+
+	wp_register_script(
+		'konrads-editable-html-pattern-panel',
+		plugins_url( 'assets/js/pattern-panel.js', __FILE__ ),
+		array(
+			'konrads-editable-html-snippet',
+			'wp-block-editor',
+			'wp-components',
+			'wp-compose',
+			'wp-data',
+			'wp-element',
+			'wp-hooks',
+			'wp-i18n',
+			'wp-notices',
 		),
 		KONRADS_EDITABLE_HTML_VERSION,
 		array( 'in_footer' => true )
@@ -135,6 +163,9 @@ function konrads_editable_html_register_template_snippet() {
  * @since 0.2.0
  */
 function konrads_editable_html_enqueue_template_snippet() {
+	wp_enqueue_script( 'konrads-editable-html-pattern-panel' );
+	wp_enqueue_style( 'konrads-editable-html-template-snippet' );
+
 	if ( ! function_exists( 'get_current_screen' ) ) {
 		return;
 	}
@@ -146,6 +177,5 @@ function konrads_editable_html_enqueue_template_snippet() {
 	}
 
 	wp_enqueue_script( 'konrads-editable-html-template-snippet' );
-	wp_enqueue_style( 'konrads-editable-html-template-snippet' );
 }
 add_action( 'enqueue_block_editor_assets', 'konrads_editable_html_enqueue_template_snippet' );

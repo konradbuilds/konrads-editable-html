@@ -17,10 +17,12 @@ Built on core blocks. Deactivate the plugin – your content stays. On 7.1+, it 
 
 Your templates are full of sections clients can't touch. The hero, the intro, the call to action – all sitting in PHP. Move them out, one at a time:
 
-1. **Patterns** in wp-admin → new pattern → Custom HTML block → paste your section.
+1. **Appearance → Patterns** → new pattern → Custom HTML block → paste your section.
 2. **Make editable**, tick what clients may change.
 3. Sidebar → **Use in a template** → **Copy code**.
 4. Paste it into your template in place of the old markup.
+
+No Patterns menu? It lives at `/wp-admin/edit.php?post_type=wp_block`. On a block theme the menu opens the site editor instead, and the menu itself needs the `edit_theme_options` capability. The plugin's **How to use** page links straight there — find it on the Plugins screen, next to Deactivate.
 
 You get core WordPress, nothing of this plugin:
 
@@ -37,6 +39,8 @@ if ( $keh_pattern instanceof WP_Post && 'publish' === $keh_pattern->post_status 
 ```
 
 By slug, not by ID – it survives the move from staging to live.
+
+The same panel appears when a pattern is selected inside a post, so you can finish without leaving the editor.
 
 ## Native first
 
@@ -67,7 +71,7 @@ Designers and front-end developers write HTML and CSS. Clients want to change th
 
 ## Status
 
-Early release (0.1.x). Feedback welcome in [Issues](../../issues).
+Early release (0.4.x). Feedback welcome in [Issues](../../issues).
 
 If it saves you time, a ⭐ helps others find it. Thanks, WordPress community.
 

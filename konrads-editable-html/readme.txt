@@ -4,7 +4,7 @@ Tags:              custom html, editable, blocks, patterns, templates
 Requires at least: 6.6
 Tested up to:      7.1
 Requires PHP:      7.4
-Stable tag:        0.3.0
+Stable tag:        0.4.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -161,6 +161,12 @@ No. A template always shows the pattern as you edit it under Patterns, synced or
 Your theme's CSS is not loaded there. Classic themes need `add_editor_style( 'style.css' );` in `functions.php`. Block themes load their styles already.
 
 == Changelog ==
+
+= 0.4.0 =
+* New: the template code now also appears in the sidebar when a pattern is selected inside a post, so the loop finishes without leaving the editor.
+* New: a short line on the Editable HTML block pointing at core's Create pattern action.
+* New: activation opens the "How to use" page once, with a shortcut to create your first pattern.
+* The "How to use" page: clearer layout and icons.
 
 = 0.3.0 =
 * New: a "How to use" page with both workflows side by side, linked from the plugin row on the Plugins screen.

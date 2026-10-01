@@ -108,6 +108,40 @@ function konrads_editable_html_plugin_row_link( $links ) {
 }
 
 /**
+ * Sends the user to the "How to use" page once, right after activation.
+ *
+ * Skipped on bulk and network activation, where a redirect would interrupt
+ * someone activating several plugins at once. The welcome notice on the
+ * Plugins screen covers those cases instead.
+ *
+ * @since 0.4.0
+ */
+function konrads_editable_html_welcome_redirect() {
+	if ( ! get_option( 'konrads_editable_html_welcome' ) ) {
+		return;
+	}
+
+	if ( wp_doing_ajax() || is_network_admin() ) {
+		return;
+	}
+
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reading core's own activation flag, nothing is changed.
+	if ( isset( $_GET['activate-multi'] ) ) {
+		return;
+	}
+
+	if ( ! current_user_can( 'edit_theme_options' ) ) {
+		return;
+	}
+
+	delete_option( 'konrads_editable_html_welcome' );
+
+	wp_safe_redirect( konrads_editable_html_help_url() );
+	exit;
+}
+add_action( 'admin_init', 'konrads_editable_html_welcome_redirect' );
+
+/**
  * Shows the welcome notice once, on the Plugins screen.
  *
  * @since 0.3.0
